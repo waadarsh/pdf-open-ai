@@ -26,7 +26,7 @@ function Testing() {
 								/>
 							</Grid.Column>
 							<Grid.Column>
-								<SearchResults searchResults={searchResults} />
+								<SearchResults searchResults={SearchResults} />
 							</Grid.Column>
 						</Grid.Row>
 						<Grid.Row>
