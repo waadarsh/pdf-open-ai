@@ -1,12 +1,15 @@
-// import logo from './logo.svg';
-// import './App.css';
+import "./App.css";
+import LandingPage from "./components/LandingPage";
+import Navbar from "./components/Navbar";
+//import Testing from "./components/Testing";
 
-import Testing from "./components/Testing";
 
 function App() {
   return (
-    <div className="App">
-      <Testing />
+    <div>
+      <Navbar />
+      <LandingPage />
+      {/* <Testing></Testing> */}
     </div>
   );
 }
