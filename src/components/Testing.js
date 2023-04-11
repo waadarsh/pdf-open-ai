@@ -1,48 +1,53 @@
 import React, { useState } from "react";
-import { Grid } from "semantic-ui-react";
-import PDFUpload from "./PDFUpload";
-import SearchBar from "./SearchBar";
-import SearchResults from "./SearchResults";
-import ChatHeader from "./ChatHeader";
+import { Grid, Segment } from "semantic-ui-react";
+import "./LandingPage.css";
+import UploadSection from "./UploadSection";
+import ResultSection from "./ResultSection";
+import QuerySection from "./QuerySection";
+import HistorySection from "./HistorySection";
 
-function Testing() {
-	// ...
-	return (
-		<div>
-			<Grid columns={2} divided>
-				<Grid.Column width={2}>
-					<ChatHeader
-						chatTitle={chatTitle}
-						handleNewChatClick={handleNewChatClick}
-					/>
-				</Grid.Column>
-				<Grid.Column width={14}>
-					<Grid stackable columns={2}>
-						<Grid.Row>
-							<Grid.Column>
-								<PDFUpload
-									handleSubmit={handleSubmit}
-									handleFileChange={handleFileChange}
-								/>
-							</Grid.Column>
-							<Grid.Column>
-								<SearchResults searchResults={SearchResults} />
-							</Grid.Column>
-						</Grid.Row>
-						<Grid.Row>
-							<Grid.Column width={16}>
-								<SearchBar
-									searchText={searchText}
-									handleSearchSubmit={handleSearchSubmit}
-									handleSearchTextChange={handleSearchTextChange}
-								/>
-							</Grid.Column>
-						</Grid.Row>
-					</Grid>
-				</Grid.Column>
-			</Grid>
-		</div>
-	);
+function LandingPage() {
+  const [searchResults, setSearchResults] = useState([]);
+
+  return (
+    <div>
+      <Segment>
+        <Grid columns={2} divided>
+          <Grid.Column width={2}>
+            <HistorySection />
+          </Grid.Column>
+          <Grid.Column width={14}>
+            <Grid stackable columns={2}>
+              <Grid.Row>
+                <Grid.Column>
+                  <Segment className="child-height">
+                    <UploadSection />
+                  </Segment>
+                </Grid.Column>
+                <Grid.Column>
+                  <Segment className="child-height">
+                    <ResultSection
+                      searchResults={searchResults}
+                    />
+                  </Segment>
+                </Grid.Column>
+              </Grid.Row>
+              <Grid.Row>
+                <Grid.Column width={16}>
+                  <Segment>
+                    <QuerySection
+                      searchResults={searchResults}
+                      setSearchResults={setSearchResults}
+                    />
+                  </Segment>
+                </Grid.Column>
+              </Grid.Row>
+            </Grid>
+          </Grid.Column>
+        </Grid>
+      </Segment>
+    </div>
+  );
 }
 
-export default Testing;
+export default LandingPage;
