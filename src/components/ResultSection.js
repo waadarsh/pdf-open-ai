@@ -12,7 +12,7 @@ function ResultSection({ searchResults }) {
             .map((result) => (
               <Message.Item>
                 <h4>{result.input}</h4> <p>{result.response}</p>
-                <br></br>
+                <br />
               </Message.Item>
             ))}
         </Message.List>
