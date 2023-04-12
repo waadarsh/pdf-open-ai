@@ -14,21 +14,21 @@ function LandingPage() {
       <Segment>
         <Grid columns={2} divided>
           <Grid.Column width={2}>
-            <HistorySection></HistorySection>
+            <HistorySection />
           </Grid.Column>
           <Grid.Column width={14}>
             <Grid stackable columns={2}>
               <Grid.Row>
                 <Grid.Column>
                   <Segment className="child-height">
-                    <UploadSection></UploadSection>
+                    <UploadSection />
                   </Segment>
                 </Grid.Column>
                 <Grid.Column>
                   <Segment className="child-height">
                     <ResultSection
                       searchResults={searchResults}
-                    ></ResultSection>
+                    />
                   </Segment>
                 </Grid.Column>
               </Grid.Row>
@@ -38,7 +38,7 @@ function LandingPage() {
                     <QuerySection
                       searchResults={searchResults}
                       setSearchResults={setSearchResults}
-                    ></QuerySection>
+                    />
                   </Segment>
                 </Grid.Column>
               </Grid.Row>
